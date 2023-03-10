@@ -5,12 +5,19 @@ public class Main {
         Gold gold = new Gold(1000);
         Storage storage = new Storage(gold);
 
+
+//        storage.setValue(new Silver());
+
         Gold value = (Gold) storage.getValue();
         value.changeOfmany();
 
 
 
     }
+}
+
+class Silver {
+
 }
 
 class Gold {
