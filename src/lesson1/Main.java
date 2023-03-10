@@ -3,18 +3,26 @@ package lesson1;
 public class Main {
     public static void main(String[] args) {
         Gold gold = new Gold(1000);
-        Storage storage = new Storage(gold);
+        Storage<Gold> storage = new Storage<>(gold);
+//        storage.setValue(new Bike());
 
 
 //        storage.setValue(new Silver());
 
-        Gold value = (Gold) storage.getValue();
+        Gold value = storage.getValue();
         value.changeOfmany();
+//        if(value instanceof Gold) {
+//            ((Gold) value).changeOfmany();
+//        }
+
+
 
 
 
     }
 }
+
+class Bike {}
 
 class Silver {
 
@@ -32,18 +40,18 @@ class Gold {
     }
 }
 
-class Storage {
-    private Object value;
+class Storage<T> {
+    private T value;
 
-    public Object getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void setValue(Object value) {
+    public void setValue(T value) {
         this.value = value;
     }
 
-    public Storage(Object value) {
+    public Storage(T value) {
         this.value = value;
     }
 }

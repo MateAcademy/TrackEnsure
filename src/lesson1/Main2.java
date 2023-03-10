@@ -1,27 +1,47 @@
 package lesson1;
 
+/**
+ * @author Sergey Klunniy
+ */
 public class Main2 {
     public static void main(String[] args) {
-        MyStorage<Gold> myStorage = new MyStorage<>(new Gold(1000));
+        Student2 student2 = new Student2();
 
-//        myStorage.setValue(new Silver());
+        Student3<Bag> student3 = new Student3<>();
+        Bag myThing = student3.myThing;
 
-        Object value = myStorage.getValue();
+
+        Student4<Long, Long> student4 = new Student4();
+        String myThing1 = student4.myThing;
+        student4.id = 22L;
+        student4.phoneNumber = 911L;
+
+//          Student4 student4 = new Student4();
+//          String myThing1 = student4.myThing;
+
     }
 }
 
-class MyStorage<T> {
-    private T value;
+class Bag {
+}
 
-    public T getValue() {
-        return value;
-    }
+class Human {
+}
 
-    public void setValue(T value) {
-        this.value = value;
-    }
+class GenHuman<T> extends Human {
+    T myThing;
+}
 
-    public MyStorage(T value) {
-        this.value = value;
-    }
+class Student1 extends GenHuman {
+}
+
+class Student2 extends GenHuman<Bag> {
+}
+
+class Student3<T> extends GenHuman<T> {
+}
+
+class Student4<T, K> extends GenHuman<String> {
+    T id;
+    K phoneNumber;
 }
