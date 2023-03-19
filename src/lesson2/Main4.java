@@ -13,7 +13,6 @@ import java.util.List;
 public class Main4 {
     public static void main(String[] args) {
 
-
         //Collections.copy();
 
         List<? extends Class3> class3s = new ArrayList<>();
