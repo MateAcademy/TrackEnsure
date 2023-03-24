@@ -6,6 +6,11 @@ import java.util.Arrays;
 
 /**
  * @author Sergey Klunniy
+ * В этом примере я вывожу все аннотации над классом,
+ * все поля класса и все аннотации над полями
+ *
+ * Рефлексия - это механизм исследования данных о программе во время ее выполнения
+ * Посредством рефлексии пишутся библиотеки и фреймворки
  */
 public class Main {
 
@@ -14,26 +19,26 @@ public class Main {
             AnotherDog anotherDog = new AnotherDog();
             Class<? extends AnotherDog> cl = anotherDog.getClass();
 
-            //вытаскиваю все аннотации класса, у нас их всего две:
-            Annotation[] annotations = cl.getAnnotations();
-            if (annotations.length > 0) {
-                System.out.println("Вывожу все аннотации класса AnotherDog:");
-                for (Annotation annotation : annotations) {
-                    System.out.println("\t" + annotation);
-                }
-            }
+//            //вытаскиваю все аннотации класса, у нас их всего две:
+//            Annotation[] annotations = cl.getAnnotations();
+//            if (annotations.length > 0) {
+//                System.out.println("Вывожу все аннотации класса AnotherDog:");
+//                for (Annotation annotation : annotations) {
+//                    System.out.println("\t" + annotation);
+//                }
+//            }
+//
+//            //хочу показать что методом getDeclaredMethods считываю даже имена приватных методов
+//            Method[] declaredMethods = cl.getDeclaredMethods();
+//            if (declaredMethods.length > 0) {
+//                System.out.println("\nВывожу все методы класса AnotherDog:");
+//                for (Method method : declaredMethods) {
+//                    System.out.println("\t" + method);
+//                }
+//            }
 
-            //хочу показать что методом getDeclaredMethods считываю даже имена приватных методов
-            Method[] declaredMethods = cl.getDeclaredMethods();
-            if (declaredMethods.length > 0) {
-                System.out.println("\nВывожу все методы класса AnotherDog:");
-                for (Method method : declaredMethods) {
-                    System.out.println("\t" + method);
-                }
-            }
 
-
-            Method[] classMethods = cl.getMethods();
+            Method[] classMethods = cl.getDeclaredMethods();
             System.out.println("\nВывожу все Аннотации над методами в классе AnotherDog:");
             for (Method method : classMethods) {
                 Annotation[] methodAnnotation = method.getAnnotations();

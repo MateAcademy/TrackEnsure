@@ -1,5 +1,7 @@
 package reflection.ex01;
 
+import reflection.ex01.annotations.HasHair;
+
 /**
  * @author Sergey Klunniy
  */
@@ -7,6 +9,8 @@ package reflection.ex01;
 public class AnotherDog extends Dog {
 
     private void test() {}
+//    @Deprecated(since = "v.20", forRemoval = true)
+//    @HasHair
     public void test2() {}
 
 }
