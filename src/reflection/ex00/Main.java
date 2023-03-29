@@ -1,12 +1,18 @@
 package reflection.ex00;
 
+import java.lang.reflect.Constructor;
+
 /**
  * @author Sergey Klunniy
  */
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
+
+        //1.
         SimpleClass simpleClass = new SimpleClass();
         Class<?> cl = simpleClass.getClass();
+
+        Constructor<?>[] constructors = cl.getConstructors();
 
         int [] arr = new int[10];
         Class<?> cl2 = arr.getClass();
