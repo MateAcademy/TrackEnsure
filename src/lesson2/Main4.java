@@ -21,7 +21,7 @@ public class Main4 {
 
         List<? extends Class3> list2 = class3s;
 
-                List<? extends Class3> list = new ArrayList<>() {{
+                List<? extends Class3> list = new ArrayList<Class3>() {{
 //            add(new Class1());
             add(new Class4());
             add(new Class3());

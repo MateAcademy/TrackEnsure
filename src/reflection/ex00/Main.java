@@ -1,6 +1,6 @@
 package reflection.ex00;
 
-import java.lang.reflect.Constructor;
+import java.util.Map;
 
 /**
  * @author Sergey Klunniy
@@ -8,11 +8,10 @@ import java.lang.reflect.Constructor;
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
 
-        //1.
+        // 1. getClass()
         SimpleClass simpleClass = new SimpleClass();
         Class<?> cl = simpleClass.getClass();
 
-        Constructor<?>[] constructors = cl.getConstructors();
 
         int [] arr = new int[10];
         Class<?> cl2 = arr.getClass();
@@ -32,5 +31,13 @@ public class Main {
         //Class<?> cl8 = Class.forName("[D");
         System.out.println(cl8);
 
+        //4.
+        Class<?> cl9 =  Integer.class.getSuperclass();
+        System.out.println(cl9);
+
+        //достаю вложенный внутренний класс
+        Class<?> cl10 =  Integer.class.getSuperclass();
+        Class<?> cl11 =  Map.Entry.class.getEnclosingClass();
+        System.out.println(cl11);
     }
 }
