@@ -1,4 +1,4 @@
-package reflection.ex01;
+package reflection.ex01.model;
 
 import reflection.ex01.annotations.HasHair;
 import reflection.ex01.annotations.Quolity;

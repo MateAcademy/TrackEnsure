@@ -4,13 +4,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * @author Sergey Klunniy
+ * @author Serhii Klunniy
  */
 public class Main {
 
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
         Calc calc = new Calc();
-
         Class<?> cl = calc.getClass();
 
         Method[] declaredMethods = cl.getDeclaredMethods();

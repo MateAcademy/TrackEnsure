@@ -1,5 +1,7 @@
 package reflection.ex00;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.Map;
 
 /**
@@ -25,19 +27,31 @@ public class Main {
 
         //3. Class.forName()
         Class<?> cl7 = Class.forName("java.lang.String");
-        System.out.println(cl7);
+        System.out.println("cl7 = " + cl7);
 
         Class<?> cl8 = Class.forName("[I");
         //Class<?> cl8 = Class.forName("[D");
-        System.out.println(cl8);
+        System.out.println("cl8 = " + cl8);
 
-        //4.
+        //4. Retrieving data using reflection methods that return Class objects
+        // for nested classes and interfaces
         Class<?> cl9 =  Integer.class.getSuperclass();
-        System.out.println(cl9);
+        System.out.println("cl9 = " + cl9);
 
-        //достаю вложенный внутренний класс
+        // fetch nested inner class
         Class<?> cl10 =  Integer.class.getSuperclass();
         Class<?> cl11 =  Map.Entry.class.getEnclosingClass();
-        System.out.println(cl11);
+        System.out.println("cl11 = " + cl11);
+
+        System.out.println(A.class.getSuperclass());
+
+        A.G g = new A.G();
+        System.out.println(g.getClass().getEnclosingClass());
     }
+}
+
+interface B {}
+
+class A implements B {
+ public static class G {}
 }

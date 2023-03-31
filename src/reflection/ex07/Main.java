@@ -1,7 +1,5 @@
 package reflection.ex07;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
-
 import java.lang.reflect.Modifier;
 
 public class Main {
@@ -13,13 +11,13 @@ public class Main {
         String s1 = (char) 27 + "[39m";
         String s2 = (char) 27 + "[34m";
 
-        //Получаем класс который описывает CatModifier
-        Class cl = CatModifier.class;
+        //We get the class that describes the CatModifier
+        Class<?> cl = CatModifier.class;
         //Узнаем имя класса
         System.out.println(s + "Class name: " + s1 + cl.getName());
         System.out.println(s + "Modifiers of class: " + s1);
 
-        //getModifiers(), возвращает целочисленное значение
+        //getModifiers(), returns an integer value
         int mods = cl.getModifiers();
         if (Modifier.isPrivate(mods)) {
             System.out.println("private");

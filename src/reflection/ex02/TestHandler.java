@@ -1,21 +1,20 @@
 package reflection.ex02;
 
-import reflection.ex02.annotations.TestAnnotations;
+import reflection.ex02.annotations.Test;
 
 import java.lang.reflect.Method;
 
 /**
- * @author Sergey Klunniy
+ * @author Serhii Klunniy
  */
 public class TestHandler {
     public static boolean test (Class<?>... ls) {
         try {
-
             for (Class<?> cl : ls) {
-                //Получаем список методов, абсолютно все модификаторы доступа
+                //We get a list of methods, absolutely all access modifiers
                 Method[] methods = cl.getDeclaredMethods();
                 for (Method method : methods) {
-                    if (method.isAnnotationPresent(TestAnnotations.class)) {
+                    if (method.isAnnotationPresent(Test.class)) {
                         Boolean b = (Boolean) method.invoke(null, new Object[]{});
 
                         if (!b) {

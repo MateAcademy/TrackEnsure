@@ -3,11 +3,12 @@ package reflection.ex04;
 import reflection.ex04.annotation.Math;
 import reflection.ex04.handler.MathHandler;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.NoSuchElementException;
 
 /**
- * @author Sergey Klunniy
+ * @author Serhii Klunniy
  */
 public class Dispatcher {
     public static void main(String[] args) {

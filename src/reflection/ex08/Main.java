@@ -12,11 +12,11 @@ public class Main {
             Class<?> cl = Dog.class;
             Dog dog = new Dog();
 
-            //По имени  name получаем класс Field
+            // By the name "name" we get the class Field
             Field field = cl.getDeclaredField("age");
-            // true -  снимаем модификатор до public, false - запрещаем
+            // true - remove the modifier to public, false - disable
             field.setAccessible(true);
-            //У класса Field, есть различные методы get
+            // The Field class has various get methods
             System.out.println("Private field value: " + field.getInt(dog));
             field.setInt(dog, 10);
             System.out.println("New private field value: " + field.getInt(dog));

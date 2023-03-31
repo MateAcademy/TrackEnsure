@@ -1,13 +1,13 @@
 package reflection.ex02;
 
-import reflection.ex02.annotations.TestAnnotations;
+import reflection.ex02.annotations.Test;
 
 /**
- * @author Sergey Klunniy
+ * @author Serhii Klunniy
  */
 public class UniversityGroup {
 
-    @TestAnnotations
+    @Test
     public static boolean isCorrectNumberOfGroups() {
         boolean res = groupsCalculator(1, 2, 3, 4) == 10;
         System.out.println("UniversityGroupsNumber is = " + res);

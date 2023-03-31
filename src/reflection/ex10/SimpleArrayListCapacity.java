@@ -1,8 +1,5 @@
 package reflection.ex10;
 
-import lesson5.ls05.A;
-import reflection.ex00.T;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 

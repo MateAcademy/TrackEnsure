@@ -1,13 +1,13 @@
 package reflection.ex02;
 
-import reflection.ex02.annotations.TestAnnotations;
+import reflection.ex02.annotations.Test;
 
 /**
- * @author Sergey Klunniy
+ * @author Serhii Klunniy
  */
 public class PersonalData {
 
-    @TestAnnotations
+    @Test
     public static boolean isValidPersonalId() {
         boolean res = idCalculator("1", "22", "333").equals("122333");
         System.out.println("PersonalData is = " + res);
@@ -19,7 +19,6 @@ public class PersonalData {
         for (String tmp : personalId) {
             sb.append(tmp);
         }
-
         return sb.toString();
     }
 }

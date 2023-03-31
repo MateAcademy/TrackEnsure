@@ -1,7 +1,7 @@
 package reflection.ex02;
 
 /**
- * @author Sergey Klunniy
+ * @author Serhii Klunniy
  */
 public class Main {
     public static void main(String[] args) {
