@@ -7,6 +7,8 @@ public class Main {
 
         FileInputStream fileInputStream;
 
+
+
         try {
             fileInputStream = new FileInputStream("/home/user/dev/GitHub/src/io/ex04/index.txt");
 
@@ -20,5 +22,19 @@ public class Main {
         } catch (IOException e) {
 
         }
+
+
+
+
+
+
+        try {
+            FileOutputStream fs = new FileOutputStream("/home/user/dev/GitHub/src/io/ex04/index.txt", true);
+            fs.write("\nnew line here".getBytes() );
+        } catch (FileNotFoundException e) {} catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 }
